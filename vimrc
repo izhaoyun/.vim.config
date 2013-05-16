@@ -146,6 +146,10 @@ nnoremap <F5> :GundoToggle<CR>
 Bundle "majutsushi/tagbar"
 nmap <F6> :TagbarToggle<CR>
 
+Bundle "tpope/vim-fugitive"
+
+Bundle "Stormherz/tablify"
+
 filetype plugin indent on
 syntax on
 
