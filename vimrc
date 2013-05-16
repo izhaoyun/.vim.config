@@ -150,6 +150,8 @@ Bundle "tpope/vim-fugitive"
 
 Bundle "Stormherz/tablify"
 
+Bundle 'AutoClose'
+
 filetype plugin indent on
 syntax on
 
