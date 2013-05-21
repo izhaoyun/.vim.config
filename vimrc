@@ -25,11 +25,13 @@ set wmnu 	"wildmenu
 set ru 		"ruler
 set sc 		"showcmd
 set ls=2        "laststatus
-set stl=[%F]%y%r%m%q%*%=[%o][Line:%l/%L,Column:%c][%p%%]
+set stl=[%F]%y%{fugitive#statusline()}%r%m%q%*%=[%o][Line:%l/%L,Column:%c][%p%%]
 
 set dictionary+=/usr/share/dict/words
 map ,ss :setlocal spell!<cr>
 
+set guioptions-=m
+set guioptions-=T
 set langmenu=zh_CN.UTF-8
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
@@ -122,13 +124,7 @@ nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>t :CtrlPTag<CR>
 
 Bundle "godlygeek/tabular"
-let mapleader=','
-if exists(":Tabularize")
-  nmap <Leader>a= :Tabularize /=<CR>
-  vmap <Leader>a= :Tabularize /=<CR>
-  nmap <Leader>a: :Tabularize /:\zs<CR>
-  vmap <Leader>a: :Tabularize /:\zs<CR>
-endif
+let g:tabular_loaded = 1
 
 Bundle "scrooloose/nerdtree"
 nmap <F4> :NERDTreeToggle<CR>
@@ -149,6 +145,7 @@ nmap <F6> :TagbarToggle<CR>
 Bundle "tpope/vim-fugitive"
 
 Bundle "Stormherz/tablify"
+let g:tablify_header_delimiter='#'
 
 Bundle 'AutoClose'
 
