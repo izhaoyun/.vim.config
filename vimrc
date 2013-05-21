@@ -8,25 +8,33 @@ set ai 	 	"autoindent
 set si 	 	"smartindent
 set ci   	"cindent
 set cino=>4,:0,g0
-set wrap
-set whichwrap=b,s,<,>,[,] 
 
 set hls  	"hlsearch
 set is   	"incsearch
+set wrap
+set whichwrap=b,s,<,>,[,] 
+
 set tw=78 	"textwidth
-set fo+=mB 
+set fo+=tcroqmBM
+set lbr
+set sm
 set enc=utf-8
 let &tenc=&enc
+set ambiwidth=double
 set fenc=utf-8
 set fencs=utf-8,gb18030,gbk,big5,gb2312,cp936,ucs-bom,latin1
 runtime ftplugin/man.vim
 
+set autochdir
 set wmnu 	"wildmenu
 set ru 		"ruler
 set sc 		"showcmd
 set ls=2        "laststatus
 set stl=[%F]%y%{fugitive#statusline()}%r%m%q%*%=[%o][Line:%l/%L,Column:%c][%p%%]
 
+set completeopt=longest,menu,preview
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif 
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 set dictionary+=/usr/share/dict/words
 map ,ss :setlocal spell!<cr>
 
@@ -35,6 +43,7 @@ set guioptions-=T
 set langmenu=zh_CN.UTF-8
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
+
 
 " Cscope
 set cscopequickfix=s-,c-,d-,i-,t-,e-
