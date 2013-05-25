@@ -3,19 +3,9 @@ set sw=4
 set ts=4 
 set t_Co=256
 
-set backspace=indent,eol,start
-set ai 	 	"autoindent 
-set si 	 	"smartindent
-set ci   	"cindent
-set cino=>4,:0,g0
-
 set hls  	"hlsearch
 set is   	"incsearch
-set wrap
-set whichwrap=b,s,<,>,[,] 
 
-set tw=78 	"textwidth
-set fo+=tcroqmBM
 set lbr
 set sm
 set enc=utf-8
@@ -29,7 +19,7 @@ set autochdir
 set wmnu 	"wildmenu
 set ru 		"ruler
 set sc 		"showcmd
-set ls=2        "laststatus
+set ls=2    "laststatus
 set stl=[%F]%y%{fugitive#statusline()}%r%m%q%*%=[%o][Line:%l/%L,Column:%c][%p%%]
 
 set completeopt=longest,menu,preview
@@ -43,7 +33,6 @@ set guioptions-=T
 set langmenu=zh_CN.UTF-8
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
-
 
 " Cscope
 set cscopequickfix=s-,c-,d-,i-,t-,e-
@@ -158,8 +147,19 @@ let g:tablify_header_delimiter='#'
 
 Bundle 'AutoClose'
 
-filetype plugin indent on
+filetype plugin on
+filetype indent on
+syntax enable
 syntax on
 
+set tw=78 	"textwidth
+set fo+=mB
+set wrap
+set whichwrap=b,s,<,>,[,] 
+set backspace=indent,eol,start
 
+set ai 	 	"autoindent 
+set si 	 	"smartindent
+set ci   	"cindent
+set cino=>4,:0,g0
 
