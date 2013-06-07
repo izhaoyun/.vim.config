@@ -104,6 +104,7 @@ noremap <LocalLeader># "ayiw:Ack <C-r>a<CR>
 vnoremap <LocalLeader># "ay:Ack <C-r>a<CR>
 
 Bundle "EasyMotion"
+let g:EasyMotion_leader_key='<Leader><Leader>'
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
 hi EasyMotionTarget ctermbg=none ctermfg=green
@@ -111,13 +112,12 @@ hi EasyMotionShade  ctermbg=none ctermfg=blue
 
 Bundle "kien/ctrlp.vim"
 let g:ctrlp_map='<c-F11>'
-nnoremap <leader>p :CtrlP<CR>
-nnoremap <leader>f :CtrlP<CR>
-nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>t :CtrlPTag<CR>
+"nnoremap <leader>p :CtrlP<CR>
+"nnoremap <leader>f :CtrlP<CR>
+"nnoremap <leader>b :CtrlPBuffer<CR>
+"nnoremap <leader>t :CtrlPTag<CR>
 
 Bundle "godlygeek/tabular"
-let g:tabular_loaded = 1
 
 Bundle "scrooloose/nerdtree"
 nmap <F4> :NERDTreeToggle<CR>
