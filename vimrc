@@ -22,11 +22,6 @@ set sc 		"showcmd
 set ls=2    "laststatus
 set stl=[%F]%y%{fugitive#statusline()}%r%m%q%*%=[%o][Line:%l/%L,Column:%c][%p%%]
 
-set completeopt=longest,menu,preview
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif 
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-set dictionary+=/usr/share/dict/words
-map ,ss :setlocal spell!<cr>
 
 set guioptions-=m
 set guioptions-=T
@@ -72,7 +67,7 @@ call vundle#rc()
 Bundle "gmarik/vundle"
 
 Bundle "Valloric/YouCompleteMe"
-let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_key_invoke_completion = '<C-S>'
 
 Bundle "SirVer/ultisnips"
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -153,7 +148,7 @@ syntax enable
 syntax on
 
 set tw=78 	"textwidth
-set fo+=mB
+set fo+=mMB
 set wrap
 set whichwrap=b,s,<,>,[,] 
 set backspace=indent,eol,start
@@ -163,3 +158,8 @@ set si 	 	"smartindent
 set ci   	"cindent
 set cino=>4,:0,g0
 
+"set completeopt=longest,menu,preview
+"autocmd CursorMovedI * if pumvisible() == 0|pclose|endif 
+"autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+set dictionary+=/usr/share/dict/words
+map ,ss :setlocal spell!<cr>
