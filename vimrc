@@ -1,3 +1,90 @@
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle "gmarik/vundle"
+
+Bundle "Valloric/YouCompleteMe"
+let g:ycm_collect_identifiers_from_comments_and_strings=1
+let g:ycm_add_preview_to_completeopt=1
+let g:ycm_key_invoke_completion = '<C-j>'
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+
+Bundle "SirVer/ultisnips"
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+Bundle "mhinz/vim-startify"
+
+Bundle "L9"
+
+Bundle "YankRing.vim"
+let g:yankring_history_dir = '~/.vim/'
+let g:yankring_min_element_length = 2
+let g:yankring_enabled = 1  
+nnoremap <silent> <F3> :YRShow<CR>
+nnoremap <silent> <Leader>yr :YRGetElem<CR>
+nnoremap yy  :<C-U>YRYankCount 'yy'<CR>
+nnoremap dd  :<C-U>YRYankCount 'dd'<CR>
+nnoremap yw  :<C-U>YRYankCount 'yw'<CR>
+nnoremap dw  :<C-U>YRYankCount 'dw'<CR>
+nnoremap ye  :<C-U>YRYankCount 'ye'<CR>
+nnoremap de  :<C-U>YRYankCount 'de'<CR>
+nnoremap yiw :<C-U>YRYankCount 'yiw'<CR>
+nnoremap diw :<C-U>YRYankCount 'diw'<CR>
+nnoremap Y   :<C-U>YRYankCount 'Y'<CR>
+nnoremap D   :<C-U>YRYankCount 'D'<CR> 
+nnoremap y$  :<C-U>YRYankCount 'y$'<CR>
+nnoremap d$  :<C-U>YRYankCount 'd$'<CR>
+nnoremap yG  :<C-U>YRYankCount 'yG'<CR>
+nnoremap dG  :<C-U>YRYankCount 'dG'<CR>
+
+Bundle "mileszs/ack.vim"
+noremap <LocalLeader># "ayiw:Ack <C-r>a<CR>
+vnoremap <LocalLeader># "ay:Ack <C-r>a<CR>
+
+Bundle "EasyMotion"
+let g:EasyMotion_leader_key='<Leader><Leader>'
+hi link EasyMotionTarget ErrorMsg
+hi link EasyMotionShade  Comment
+hi EasyMotionTarget ctermbg=none ctermfg=green
+hi EasyMotionShade  ctermbg=none ctermfg=blue
+
+Bundle "kien/ctrlp.vim"
+let g:ctrlp_map='<c-F11>'
+
+Bundle "godlygeek/tabular"
+
+Bundle "scrooloose/nerdtree"
+nmap <F4> :NERDTreeToggle<CR>
+nmap <leader>nt :NERDTree<cr>:set rnu<cr>
+let NERDTreeShowBookmarks=1
+let NERDTreeShowFiles=1
+let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.$','\~$']
+let NERDTreeShowLineNumbers=1
+let NERDTreeWinPos=1
+
+Bundle "Gundo"
+nnoremap <F5> :GundoToggle<CR>
+
+Bundle "majutsushi/tagbar"
+nmap <F6> :TagbarToggle<CR>
+
+Bundle "tpope/vim-fugitive"
+
+Bundle "Stormherz/tablify"
+let g:tablify_header_delimiter='#'
+
+Bundle 'AutoClose'
+
+"----------------------------------------------------------
+
 set nu
 set sw=4 	
 set ts=4 
@@ -54,94 +141,6 @@ nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
-"---------------------------------------------------------
-
-set nocompatible               " be iMproved
-filetype off                   " required!
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required! 
-Bundle "gmarik/vundle"
-
-Bundle "Valloric/YouCompleteMe"
-let g:ycm_key_invoke_completion = '<C-S>'
-
-Bundle "SirVer/ultisnips"
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
-Bundle "mhinz/vim-startify"
-
-Bundle "L9"
-
-Bundle "YankRing.vim"
-let g:yankring_history_dir = '~/.vim/'
-let g:yankring_min_element_length = 2
-let g:yankring_enabled = 1  
-nnoremap <silent> <F3> :YRShow<CR>
-nnoremap <silent> <Leader>yr :YRGetElem<CR>
-nnoremap yy  :<C-U>YRYankCount 'yy'<CR>
-nnoremap dd  :<C-U>YRYankCount 'dd'<CR>
-nnoremap yw  :<C-U>YRYankCount 'yw'<CR>
-nnoremap dw  :<C-U>YRYankCount 'dw'<CR>
-nnoremap ye  :<C-U>YRYankCount 'ye'<CR>
-nnoremap de  :<C-U>YRYankCount 'de'<CR>
-nnoremap yiw :<C-U>YRYankCount 'yiw'<CR>
-nnoremap diw :<C-U>YRYankCount 'diw'<CR>
-nnoremap Y   :<C-U>YRYankCount 'Y'<CR>
-nnoremap D   :<C-U>YRYankCount 'D'<CR> 
-nnoremap y$  :<C-U>YRYankCount 'y$'<CR>
-nnoremap d$  :<C-U>YRYankCount 'd$'<CR>
-nnoremap yG  :<C-U>YRYankCount 'yG'<CR>
-nnoremap dG  :<C-U>YRYankCount 'dG'<CR>
-
-Bundle "mileszs/ack.vim"
-noremap <LocalLeader># "ayiw:Ack <C-r>a<CR>
-vnoremap <LocalLeader># "ay:Ack <C-r>a<CR>
-
-Bundle "EasyMotion"
-let g:EasyMotion_leader_key='<Leader><Leader>'
-hi link EasyMotionTarget ErrorMsg
-hi link EasyMotionShade  Comment
-hi EasyMotionTarget ctermbg=none ctermfg=green
-hi EasyMotionShade  ctermbg=none ctermfg=blue
-
-Bundle "kien/ctrlp.vim"
-let g:ctrlp_map='<c-F11>'
-"nnoremap <leader>p :CtrlP<CR>
-"nnoremap <leader>f :CtrlP<CR>
-"nnoremap <leader>b :CtrlPBuffer<CR>
-"nnoremap <leader>t :CtrlPTag<CR>
-
-Bundle "godlygeek/tabular"
-
-Bundle "scrooloose/nerdtree"
-nmap <F4> :NERDTreeToggle<CR>
-nmap <leader>nt :NERDTree<cr>:set rnu<cr>
-let NERDTreeShowBookmarks=1
-let NERDTreeShowFiles=1
-let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.$','\~$']
-let NERDTreeShowLineNumbers=1
-let NERDTreeWinPos=1
-
-Bundle "Gundo"
-nnoremap <F5> :GundoToggle<CR>
-
-Bundle "majutsushi/tagbar"
-nmap <F6> :TagbarToggle<CR>
-
-Bundle "tpope/vim-fugitive"
-
-Bundle "Stormherz/tablify"
-let g:tablify_header_delimiter='#'
-
-Bundle 'AutoClose'
-
 filetype plugin on
 filetype indent on
 syntax enable
@@ -152,6 +151,9 @@ set fo+=mMB
 set wrap
 set whichwrap=b,s,<,>,[,] 
 set backspace=indent,eol,start
+
+let mapleader=","
+let g:mapleader=","
 
 set ai 	 	"autoindent 
 set si 	 	"smartindent
