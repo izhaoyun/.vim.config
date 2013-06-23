@@ -12,6 +12,7 @@ Bundle "Valloric/YouCompleteMe"
 let g:ycm_collect_identifiers_from_comments_and_strings=1
 let g:ycm_add_preview_to_completeopt=1
 let g:ycm_key_invoke_completion = '<C-j>'
+let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 
 Bundle "SirVer/ultisnips"
@@ -45,8 +46,6 @@ nnoremap yG  :<C-U>YRYankCount 'yG'<CR>
 nnoremap dG  :<C-U>YRYankCount 'dG'<CR>
 
 Bundle "mileszs/ack.vim"
-noremap <LocalLeader># "ayiw:Ack <C-r>a<CR>
-vnoremap <LocalLeader># "ay:Ack <C-r>a<CR>
 
 Bundle "EasyMotion"
 let g:EasyMotion_leader_key='<Leader><Leader>'
@@ -83,6 +82,11 @@ let g:tablify_header_delimiter='#'
 
 Bundle 'AutoClose'
 
+Bundle 'The-NERD-Commenter'
+
+Bundle 'octol/vim-cpp-enhanced-highlight'
+
+Bundle 'klen/python-mode'
 "----------------------------------------------------------
 
 set nu
