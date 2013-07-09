@@ -29,7 +29,6 @@ let g:yankring_history_dir = '~/.vim/'
 let g:yankring_min_element_length = 2
 let g:yankring_enabled = 1  
 nnoremap <silent> <F3> :YRShow<CR>
-nnoremap <silent> <Leader>yr :YRGetElem<CR>
 nnoremap yy  :<C-U>YRYankCount 'yy'<CR>
 nnoremap dd  :<C-U>YRYankCount 'dd'<CR>
 nnoremap yw  :<C-U>YRYankCount 'yw'<CR>
@@ -68,6 +67,8 @@ let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.$','\~$']
 let NERDTreeShowLineNumbers=1
 let NERDTreeWinPos=1
+
+Bundle "terryma/vim-multiple-cursors"
 
 Bundle "Gundo"
 nnoremap <F5> :GundoToggle<CR>
