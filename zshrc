@@ -37,7 +37,7 @@ ZSH_THEME="candy"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump git tmux gnu-utils copyfile copydir colored-man python mysql-macports debian web-search)
+plugins=(autojump git gnu-utils copyfile copydir colored-man python mysql-macports debian web-search)
 
 source $ZSH/oh-my-zsh.sh
 
