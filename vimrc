@@ -54,13 +54,17 @@ hi EasyMotionTarget ctermbg=none ctermfg=green
 hi EasyMotionShade  ctermbg=none ctermfg=blue
 
 Bundle "kien/ctrlp.vim"
-let g:ctrlp_map='<c-F11>'
+let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_map = '<c-f>'
+map <c-b> :CtrlPBuffer<cr>
 
 Bundle "godlygeek/tabular"
 
 Bundle "scrooloose/nerdtree"
-nmap <F4> :NERDTreeToggle<CR>
-nmap <leader>nt :NERDTree<cr>:set rnu<cr>
+map <leader>nn :NERDTreeToggle<cr>
+map <leader>nb :NERDTreeFromBookmark 
+map <leader>nf :NERDTreeFind<cr>
 let NERDTreeShowBookmarks=1
 let NERDTreeShowFiles=1
 let NERDTreeShowHidden=1
@@ -69,6 +73,8 @@ let NERDTreeShowLineNumbers=1
 let NERDTreeWinPos=1
 
 Bundle "terryma/vim-multiple-cursors"
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key="\<C-s>"
 
 Bundle "Gundo"
 nnoremap <F5> :GundoToggle<CR>
@@ -118,8 +124,8 @@ set stl=[%F]%y%{fugitive#statusline()}%r%m%q%*%=[%o][Line:%l/%L,Column:%c][%p%%]
 set guioptions-=m
 set guioptions-=T
 set langmenu=zh_CN.UTF-8
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
+"source $VIMRUNTIME/delmenu.vim
+"source $VIMRUNTIME/menu.vim
 
 " Cscope
 set cscopequickfix=s-,c-,d-,i-,t-,e-
@@ -157,8 +163,18 @@ set wrap
 set whichwrap=b,s,<,>,[,] 
 set backspace=indent,eol,start
 
-let mapleader=","
-let g:mapleader=","
+"saving of a buffer
+nmap <leader>w :w!<cr>
+"switch to the directory of the open buffer
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove 
+" Opens a new tab with the current buffer's path
+" Super useful when editing files in the same directory
+map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 
 set ai 	 	"autoindent 
 set si 	 	"smartindent
@@ -170,3 +186,4 @@ set cino=>4,:0,g0
 "autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 set dictionary+=/usr/share/dict/words
 map ,ss :setlocal spell!<cr>
+
