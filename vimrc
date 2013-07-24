@@ -73,8 +73,12 @@ let NERDTreeShowLineNumbers=1
 let NERDTreeWinPos=1
 
 Bundle "terryma/vim-multiple-cursors"
-let g:multi_cursor_use_default_mapping=0
-let g:multi_cursor_next_key="\<C-s>"
+let g:multi_cursor_next_key='<C-m>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+
+Bundle "terryma/vim-expand-region"
 
 Bundle "Gundo"
 nnoremap <F5> :GundoToggle<CR>
@@ -93,7 +97,12 @@ Bundle 'The-NERD-Commenter'
 
 Bundle 'octol/vim-cpp-enhanced-highlight'
 
-Bundle 'klen/python-mode'
+Bundle "hdima/python-syntax"
+let python_highlight_all=1
+
+Bundle 'Lokaltog/vim-powerline'
+let g:Powerline_symbols='unicode'
+
 "----------------------------------------------------------
 
 set nu
@@ -118,7 +127,7 @@ set wmnu 	"wildmenu
 set ru 		"ruler
 set sc 		"showcmd
 set ls=2    "laststatus
-set stl=[%F]%y%{fugitive#statusline()}%r%m%q%*%=[%o][Line:%l/%L,Column:%c][%p%%]
+"set stl=[%F]%y%{fugitive#statusline()}%r%m%q%*%=[%o][Line:%l/%L,Column:%c][%p%%]
 
 
 set guioptions-=m
@@ -158,7 +167,7 @@ syntax enable
 syntax on
 
 set tw=78 	"textwidth
-set fo+=mMB
+set fo+=mB
 set wrap
 set whichwrap=b,s,<,>,[,] 
 set backspace=indent,eol,start
