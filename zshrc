@@ -67,13 +67,13 @@ alias ustc_vpn_w='sudo openvpn --config ~/.vpn/ustc_vpn/ustc-wangtong.ovpn'
 # cd ~dir_name
 hash -d ACE="/usr/share/doc/libace-doc"
 hash -d AUTOCONF="/usr/share/doc/autoconf-doc/"
-hash -d BOOST="/usr/share/doc/libboost1.48-doc//HTML/"
+hash -d BOOST="/usr/share/doc/libboost1.46-doc//HTML/"
 hash -d CPPA="/usr/share/doc/c++-annotations/html/"
-hash -d CRYPTO="/usr/share/doc/libcrypto++-doc/html/"
+#hash -d CRYPTO="/usr/share/doc/libcrypto++-doc/html/"
 hash -d DOC="/usr/share/doc"
 hash -d DOXYGEN="/usr/share/doc/doxygen/html/"
 hash -d GDB="/usr/share/doc/gdb-doc/html/"
-hash -d NCURSES="/usr/share/doc/ncurses-doc/html/"
+#hash -d NCURSES="/usr/share/doc/ncurses-doc/html/"
 hash -d ZSH="/usr/share/doc/zsh-doc/html/"
 hash -d ICU="/usr/share/doc/libicu-dev/docs"
 hash -d POSTGRESQL="/usr/share/doc/postgresql-doc-9.1/"
@@ -94,3 +94,10 @@ export JRE_HOME=${JAVA_HOME}/jre
 export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
 export PATH=${JAVA_HOME}/bin:$PATH  
 
+# CUDA_ENV
+export PATH=/usr/local/cuda-5.5/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-5.5/lib:/usr/lib/nvidia-current:$LD_LIBRARY_PATH
+
+# OpenCV_ENV
+#PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/opencv/lib/
+#export PKG_CONFIG_PATH
