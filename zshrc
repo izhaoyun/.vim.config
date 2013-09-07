@@ -99,5 +99,10 @@ export PATH=/usr/local/cuda-5.5/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-5.5/lib:/usr/lib/nvidia-current:$LD_LIBRARY_PATH
 
 # OpenCV_ENV
-#PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/opencv/lib/
-#export PKG_CONFIG_PATH
+#export OpenCV_DIR=/usr/local/opencv-2.4.6.1
+
+# QT
+#export QTDIR=/opt/Qt5.1.0/
+#export PATH=$QTDIR/5.1.0/gcc/bin:$PATH
+#export LD_LIBRARY_PATH=$QTDIR/5.1.0/gcc/lib:$LD_LIBRARY_PATH
+

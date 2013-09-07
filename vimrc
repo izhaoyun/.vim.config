@@ -15,6 +15,7 @@ let g:ycm_key_invoke_completion = '<C-j>'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 
+
 Bundle "SirVer/ultisnips"
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
@@ -23,6 +24,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 Bundle "mhinz/vim-startify"
 
 Bundle "L9"
+
+Bundle "a.vim"
 
 Bundle "YankRing.vim"
 let g:yankring_history_dir = '~/.vim/'
@@ -190,9 +193,14 @@ set si 	 	"smartindent
 set ci   	"cindent
 set cino=>4,:0,g0
 
-"set completeopt=longest,menu,preview
-"autocmd CursorMovedI * if pumvisible() == 0|pclose|endif 
-"autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+set completeopt=longest,menu,preview
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif 
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 set dictionary+=/usr/share/dict/words
 map ,ss :setlocal spell!<cr>
 
+set foldmethod=indent
+set foldlevel=99
+
+"vim编辑只读系统文件方法 :w!!
+cmap w!! %!sudo tee > /dev/null %
