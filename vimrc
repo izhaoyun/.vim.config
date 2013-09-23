@@ -14,7 +14,9 @@ let g:ycm_add_preview_to_completeopt=1
 let g:ycm_key_invoke_completion = '<C-j>'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+Bundle "scrooloose/syntastic"
 
 Bundle "SirVer/ultisnips"
 let g:UltiSnipsExpandTrigger="<c-j>"
