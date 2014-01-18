@@ -93,10 +93,12 @@ export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 export JRE_HOME=${JAVA_HOME}/jre  
 export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
 export PATH=${JAVA_HOME}/bin:$PATH  
+export ANT_HOME=/usr/lib/apache-ant-1.9.2
+export PATH=${ANT_HOME}/bin:$PATH
 
 # CUDA_ENV
 export PATH=/usr/local/cuda-5.5/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-5.5/lib:/usr/lib/nvidia-current:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-5.5/lib64:/usr/lib/nvidia-current:$LD_LIBRARY_PATH
 
 # OpenCV_ENV
 #export OpenCV_DIR=/usr/local/opencv-2.4.6.1
@@ -106,3 +108,6 @@ export LD_LIBRARY_PATH=/usr/local/cuda-5.5/lib:/usr/lib/nvidia-current:$LD_LIBRA
 #export PATH=$QTDIR/5.1.0/gcc/bin:$PATH
 #export LD_LIBRARY_PATH=$QTDIR/5.1.0/gcc/lib:$LD_LIBRARY_PATH
 
+# Android
+export ANDROID_SDK_HOME=~/bin/android-sdk-linux
+export PATH=${ANDROID_SDK_HOME}/platform-tools:$PATH
