@@ -1,0 +1,10 @@
+ppa:webupd8team/java
+ppa:fcitx-team/nightly
+ppa:bumblebee/stable
+ppa:fcwu-tw/ppa
+ppa:p12/ppa
+ppa:tiheum/equinox
+ppa:webupd8team/themes
+ppa:fkrull/deadsnakes 		python3.3
+ppa:jtaylor/ipython
+ppa:tualatrix/ppa

@@ -54,7 +54,7 @@ alias vi='vim'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias emacs='emacs -nw'
+#alias emacs='emacs -nw'
 alias dstat='dstat -cdlmnpsy'
 alias ustc_bbs='luit -encoding gbk telnet bbs.ustc.edu.cn'
 alias ustc_vpn_d='sudo openvpn --config ~/.vpn/ustc_vpn/ustc-dianxin.ovpn'
@@ -93,7 +93,7 @@ export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 export JRE_HOME=${JAVA_HOME}/jre  
 export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
 export PATH=${JAVA_HOME}/bin:$PATH  
-export ANT_HOME=/usr/lib/apache-ant-1.9.2
+export ANT_HOME=/usr/lib/apache-ant-1.9.3
 export PATH=${ANT_HOME}/bin:$PATH
 
 # CUDA_ENV
@@ -111,3 +111,4 @@ export LD_LIBRARY_PATH=/usr/local/cuda-5.5/lib64:/usr/lib/nvidia-current:$LD_LIB
 # Android
 export ANDROID_SDK_HOME=~/bin/android-sdk-linux
 export PATH=${ANDROID_SDK_HOME}/platform-tools:$PATH
+
