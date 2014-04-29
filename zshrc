@@ -56,9 +56,9 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 #alias emacs='emacs -nw'
 alias dstat='dstat -cdlmnpsy'
-alias ustc_bbs='luit -encoding gbk telnet bbs.ustc.edu.cn'
-alias ustc_vpn_d='sudo openvpn --config ~/.vpn/ustc_vpn/ustc-dianxin.ovpn'
-alias ustc_vpn_w='sudo openvpn --config ~/.vpn/ustc_vpn/ustc-wangtong.ovpn'
+#alias ustc_bbs='luit -encoding gbk telnet bbs.ustc.edu.cn'
+#alias ustc_vpn_d='sudo openvpn --config ~/.vpn/ustc_vpn/ustc-dianxin.ovpn'
+#alias ustc_vpn_w='sudo openvpn --config ~/.vpn/ustc_vpn/ustc-wangtong.ovpn'
 
 ##########
 # Alias2 #
@@ -67,7 +67,7 @@ alias ustc_vpn_w='sudo openvpn --config ~/.vpn/ustc_vpn/ustc-wangtong.ovpn'
 # cd ~dir_name
 hash -d ACE="/usr/share/doc/libace-doc"
 hash -d AUTOCONF="/usr/share/doc/autoconf-doc/"
-hash -d BOOST="/usr/share/doc/libboost1.46-doc//HTML/"
+hash -d BOOST="/usr/share/doc/libboost1.55-doc/HTML/"
 hash -d CPPA="/usr/share/doc/c++-annotations/html/"
 #hash -d CRYPTO="/usr/share/doc/libcrypto++-doc/html/"
 hash -d DOC="/usr/share/doc"
@@ -93,12 +93,12 @@ export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 export JRE_HOME=${JAVA_HOME}/jre  
 export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
 export PATH=${JAVA_HOME}/bin:$PATH  
-export ANT_HOME=/usr/lib/apache-ant-1.9.3
+#export ANT_HOME=/usr/lib/apache-ant-1.9.3
 export PATH=${ANT_HOME}/bin:$PATH
 
 # CUDA_ENV
-export PATH=/usr/local/cuda-5.5/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-5.5/lib64:/usr/lib/nvidia-current:$LD_LIBRARY_PATH
+#export PATH=/usr/local/cuda-5.5/bin:$PATH
+#export LD_LIBRARY_PATH=/usr/local/cuda-5.5/lib64:/usr/lib/nvidia-current:$LD_LIBRARY_PATH
 
 # OpenCV_ENV
 #export OpenCV_DIR=/usr/local/opencv-2.4.6.1
@@ -109,6 +109,6 @@ export LD_LIBRARY_PATH=/usr/local/cuda-5.5/lib64:/usr/lib/nvidia-current:$LD_LIB
 #export LD_LIBRARY_PATH=$QTDIR/5.1.0/gcc/lib:$LD_LIBRARY_PATH
 
 # Android
-export ANDROID_SDK_HOME=~/bin/android-sdk-linux
-export PATH=${ANDROID_SDK_HOME}/platform-tools:$PATH
+#export ANDROID_SDK_HOME=~/bin/android-sdk-linux
+#export PATH=${ANDROID_SDK_HOME}/platform-tools:$PATH
 
