@@ -56,6 +56,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 #alias emacs='emacs -nw'
 alias dstat='dstat -cdlmnpsy'
+alias SimpleHTTPServer='python -m SimpleHTTPServer'
 #alias ustc_bbs='luit -encoding gbk telnet bbs.ustc.edu.cn'
 #alias ustc_vpn_d='sudo openvpn --config ~/.vpn/ustc_vpn/ustc-dianxin.ovpn'
 #alias ustc_vpn_w='sudo openvpn --config ~/.vpn/ustc_vpn/ustc-wangtong.ovpn'
@@ -92,8 +93,8 @@ hash -d WWW=/var/www
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle  
 export JRE_HOME=${JAVA_HOME}/jre  
 export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
+export ANT_HOME=/usr/local/apache-ant-1.9.3
 export PATH=${JAVA_HOME}/bin:$PATH  
-#export ANT_HOME=/usr/lib/apache-ant-1.9.3
 export PATH=${ANT_HOME}/bin:$PATH
 
 # CUDA_ENV
@@ -112,3 +113,9 @@ export PATH=${ANT_HOME}/bin:$PATH
 #export ANDROID_SDK_HOME=~/bin/android-sdk-linux
 #export PATH=${ANDROID_SDK_HOME}/platform-tools:$PATH
 
+# Lua
+export SCALA_HOME=/usr/local/share/scala
+export PATH=$PATH:$SCALA_HOME/bin
+# NVM
+export NVM_DIR="/home/zhaoy/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

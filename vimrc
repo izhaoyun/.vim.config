@@ -7,62 +7,57 @@ call vundle#rc()
 " let Vundle manage Vundle
 " required! 
 Bundle "gmarik/vundle"
-
 Bundle "Valloric/YouCompleteMe"
+Bundle "L9"
+Bundle "a.vim"
+Bundle "YankRing.vim"
+Bundle "mileszs/ack.vim"
+Bundle "EasyMotion"
+Bundle "kien/ctrlp.vim"
+Bundle "godlygeek/tabular"
+Bundle "scrooloose/nerdtree"
+Bundle "terryma/vim-multiple-cursors"
+Bundle "terryma/vim-expand-region"
+Bundle "Gundo"
+Bundle 'Lokaltog/vim-powerline'
+Bundle "hdima/python-syntax"
+Bundle 'The-NERD-Commenter'
+Bundle 'octol/vim-cpp-enhanced-highlight'
+Bundle "tpope/vim-fugitive"
+Bundle "Stormherz/tablify"
+Bundle 'AutoClose'
+Bundle "majutsushi/tagbar"
+Bundle "SirVer/ultiSnips"
+Bundle "honza/vim-snippets"
+
+" YouCompleteMe
 let g:ycm_collect_identifiers_from_comments_and_strings=1
 let g:ycm_add_preview_to_completeopt=1
 let g:ycm_key_invoke_completion = '<C-j>'
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
-"Bundle "SirVer/ultisnips"
-"let g:UltiSnipsExpandTrigger="<c-j>"
-"let g:UltiSnipsJumpForwardTrigger="<c-j>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
-Bundle "L9"
-
-Bundle "a.vim"
-
-Bundle "YankRing.vim"
-let g:yankring_history_dir = '~/.vim/'
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" YankRing
+let g:yankring_history_dir = '~/.vim/bundle/YankRing.vim'
 let g:yankring_min_element_length = 2
 let g:yankring_enabled = 1  
-nnoremap <silent> <F3> :YRShow<CR>
-nnoremap yy  :<C-U>YRYankCount 'yy'<CR>
-nnoremap dd  :<C-U>YRYankCount 'dd'<CR>
-nnoremap yw  :<C-U>YRYankCount 'yw'<CR>
-nnoremap dw  :<C-U>YRYankCount 'dw'<CR>
-nnoremap ye  :<C-U>YRYankCount 'ye'<CR>
-nnoremap de  :<C-U>YRYankCount 'de'<CR>
-nnoremap yiw :<C-U>YRYankCount 'yiw'<CR>
-nnoremap diw :<C-U>YRYankCount 'diw'<CR>
-nnoremap Y   :<C-U>YRYankCount 'Y'<CR>
-nnoremap D   :<C-U>YRYankCount 'D'<CR> 
-nnoremap y$  :<C-U>YRYankCount 'y$'<CR>
-nnoremap d$  :<C-U>YRYankCount 'd$'<CR>
-nnoremap yG  :<C-U>YRYankCount 'yG'<CR>
-nnoremap dG  :<C-U>YRYankCount 'dG'<CR>
-
-Bundle "mileszs/ack.vim"
-
-Bundle "EasyMotion"
+nnoremap <silent> <F10> :YRShow<CR>
+" EasyMotion
 let g:EasyMotion_leader_key='<Leader><Leader>'
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
 hi EasyMotionTarget ctermbg=none ctermfg=green
 hi EasyMotionShade  ctermbg=none ctermfg=blue
-
-Bundle "kien/ctrlp.vim"
+" Ctrlp
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_map = '<c-f>'
 map <c-b> :CtrlPBuffer<cr>
-
-Bundle "godlygeek/tabular"
-
-Bundle "scrooloose/nerdtree"
+" NERDTree
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark 
 map <leader>nf :NERDTreeFind<cr>
@@ -72,36 +67,24 @@ let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.$','\~$']
 let NERDTreeShowLineNumbers=1
 let NERDTreeWinPos=1
-
-Bundle "terryma/vim-multiple-cursors"
+" Vim-Multiple-Cursors
 let g:multi_cursor_next_key='<C-m>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
-
-Bundle "terryma/vim-expand-region"
-
-Bundle "Gundo"
-nnoremap <F5> :GundoToggle<CR>
-
-Bundle "majutsushi/tagbar"
-nmap <F6> :TagbarToggle<CR>
-
-Bundle "tpope/vim-fugitive"
-
-Bundle "Stormherz/tablify"
+"Gundo"
+nnoremap <F4> :GundoToggle<CR>
+" Tagbar
+nmap <F4> :TagbarToggle<CR>
+"在每次保存文件时自动执行ctags
+autocmd BufWritePost * call system("ctags -R --exclude=.git")
+"手动执行ctags
+nnoremap <F5> :!ctags -R<CR>
+" Tablify
 let g:tablify_header_delimiter='#'
-
-Bundle 'AutoClose'
-
-Bundle 'The-NERD-Commenter'
-
-Bundle 'octol/vim-cpp-enhanced-highlight'
-
-Bundle "hdima/python-syntax"
+" python syntax
 let python_highlight_all=1
-
-Bundle 'Lokaltog/vim-powerline'
+" vim powerline
 let g:Powerline_symbols='unicode'
 
 "----------------------------------------------------------
@@ -202,3 +185,4 @@ set foldlevel=99
 
 "vim编辑只读系统文件方法 :w!!
 cmap w!! %!sudo tee > /dev/null %
+
