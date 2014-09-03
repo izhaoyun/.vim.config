@@ -1,8 +1,8 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
@@ -77,7 +77,7 @@ nnoremap <F4> :GundoToggle<CR>
 " Tagbar
 nmap <F4> :TagbarToggle<CR>
 "在每次保存文件时自动执行ctags
-autocmd BufWritePost * call system("ctags -R --exclude=.git")
+"autocmd BufWritePost * call system("ctags -R --exclude=.git")
 "手动执行ctags
 nnoremap <F5> :!ctags -R<CR>
 " Tablify

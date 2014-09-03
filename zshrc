@@ -93,9 +93,7 @@ hash -d WWW=/var/www
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle  
 export JRE_HOME=${JAVA_HOME}/jre  
 export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
-export ANT_HOME=/usr/local/apache-ant-1.9.3
 export PATH=${JAVA_HOME}/bin:$PATH  
-export PATH=${ANT_HOME}/bin:$PATH
 
 # CUDA_ENV
 #export PATH=/usr/local/cuda-5.5/bin:$PATH
