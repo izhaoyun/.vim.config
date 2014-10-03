@@ -6,29 +6,35 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Bundle "gmarik/vundle"
-Bundle "Valloric/YouCompleteMe"
-Bundle "L9"
-Bundle "a.vim"
-Bundle "YankRing.vim"
-Bundle "mileszs/ack.vim"
-Bundle "EasyMotion"
-Bundle "kien/ctrlp.vim"
-Bundle "godlygeek/tabular"
-Bundle "scrooloose/nerdtree"
-Bundle "terryma/vim-multiple-cursors"
-Bundle "terryma/vim-expand-region"
-Bundle "Gundo"
-Bundle 'Lokaltog/vim-powerline'
-Bundle "hdima/python-syntax"
-Bundle 'The-NERD-Commenter'
-Bundle 'octol/vim-cpp-enhanced-highlight'
-Bundle "tpope/vim-fugitive"
-Bundle "Stormherz/tablify"
-Bundle 'AutoClose'
-Bundle "majutsushi/tagbar"
-Bundle "SirVer/ultiSnips"
-Bundle "honza/vim-snippets"
+Plugin 'gmarik/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'L9'
+Plugin 'a.vim'
+Plugin 'YankRing.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'EasyMotion'
+Plugin 'kien/ctrlp.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'scrooloose/nerdtree'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-expand-region'
+Plugin 'Gundo'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'hdima/python-syntax'
+Plugin 'The-NERD-Commenter'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Stormherz/tablify'
+Plugin 'AutoClose'
+Plugin 'majutsushi/tagbar'
+Plugin 'SirVer/ultiSnips'
+Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-markdown'
+
+call vundle#end()
+filetype plugin indent on
+syntax enable
+syntax on
 
 " YouCompleteMe
 let g:ycm_collect_identifiers_from_comments_and_strings=1
@@ -37,26 +43,31 @@ let g:ycm_key_invoke_completion = '<C-j>'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
 " YankRing
 let g:yankring_history_dir = '~/.vim/bundle/YankRing.vim'
 let g:yankring_min_element_length = 2
 let g:yankring_enabled = 1  
 nnoremap <silent> <F10> :YRShow<CR>
+
 " EasyMotion
 let g:EasyMotion_leader_key='<Leader><Leader>'
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
 hi EasyMotionTarget ctermbg=none ctermfg=green
 hi EasyMotionShade  ctermbg=none ctermfg=blue
+
 " Ctrlp
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_map = '<c-f>'
 map <c-b> :CtrlPBuffer<cr>
+
 " NERDTree
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark 
@@ -67,23 +78,29 @@ let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.$','\~$']
 let NERDTreeShowLineNumbers=1
 let NERDTreeWinPos=1
+
 " Vim-Multiple-Cursors
 let g:multi_cursor_next_key='<C-m>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
+
 "Gundo"
 nnoremap <F4> :GundoToggle<CR>
+
 " Tagbar
-nmap <F4> :TagbarToggle<CR>
+nmap <F5> :TagbarToggle<CR>
 "在每次保存文件时自动执行ctags
 "autocmd BufWritePost * call system("ctags -R --exclude=.git")
 "手动执行ctags
-nnoremap <F5> :!ctags -R<CR>
+"nnoremap <F5> :!ctags -R<CR>
+
 " Tablify
 let g:tablify_header_delimiter='#'
+
 " python syntax
 let python_highlight_all=1
+
 " vim powerline
 let g:Powerline_symbols='unicode'
 
@@ -145,10 +162,6 @@ nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
-filetype plugin on
-filetype indent on
-syntax enable
-syntax on
 
 set tw=78 	"textwidth
 set fo+=mB

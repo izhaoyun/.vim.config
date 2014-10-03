@@ -5,11 +5,6 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="wezm"
-#ZSH_THEME="clean"
-#ZSH_THEME="cloud"
-#ZSH_THEME="miloshadzic"
-#ZSH_THEME="pygmalion"
 ZSH_THEME="candy"
 
 # Example aliases
@@ -66,18 +61,10 @@ alias SimpleHTTPServer='python -m SimpleHTTPServer'
 ##########
 # hash -d dir_name="dir_path"
 # cd ~dir_name
-hash -d ACE="/usr/share/doc/libace-doc"
 hash -d AUTOCONF="/usr/share/doc/autoconf-doc/"
-hash -d BOOST="/usr/share/doc/libboost1.55-doc/HTML/"
-hash -d CPPA="/usr/share/doc/c++-annotations/html/"
-#hash -d CRYPTO="/usr/share/doc/libcrypto++-doc/html/"
 hash -d DOC="/usr/share/doc"
-hash -d DOXYGEN="/usr/share/doc/doxygen/html/"
-hash -d GDB="/usr/share/doc/gdb-doc/html/"
 #hash -d NCURSES="/usr/share/doc/ncurses-doc/html/"
 hash -d ZSH="/usr/share/doc/zsh-doc/html/"
-hash -d ICU="/usr/share/doc/libicu-dev/docs"
-hash -d POSTGRESQL="/usr/share/doc/postgresql-doc-9.1/"
 hash -d STL="/usr/share/doc/stl-manual/html"
 hash -d APT="/usr/share/doc/aptitude/html/en/"
 hash -d LOKI="/usr/share/doc/libloki-doc/html"
@@ -88,7 +75,6 @@ hash -d LOG=/var/log
 hash -d SLOG=/var/log/syslog
 hash -d WWW=/var/www
 
-
 # JDK_ENV
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle  
 export JRE_HOME=${JAVA_HOME}/jre  
@@ -96,24 +82,6 @@ export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 export PATH=${JAVA_HOME}/bin:$PATH  
 
 # CUDA_ENV
-#export PATH=/usr/local/cuda-5.5/bin:$PATH
-#export LD_LIBRARY_PATH=/usr/local/cuda-5.5/lib64:/usr/lib/nvidia-current:$LD_LIBRARY_PATH
+export PATH=/usr/local/cuda-6.5/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-6.5/lib64:/usr/lib/nvidia-current:$LD_LIBRARY_PATH
 
-# OpenCV_ENV
-#export OpenCV_DIR=/usr/local/opencv-2.4.6.1
-
-# QT
-#export QTDIR=/opt/Qt5.1.0/
-#export PATH=$QTDIR/5.1.0/gcc/bin:$PATH
-#export LD_LIBRARY_PATH=$QTDIR/5.1.0/gcc/lib:$LD_LIBRARY_PATH
-
-# Android
-#export ANDROID_SDK_HOME=~/bin/android-sdk-linux
-#export PATH=${ANDROID_SDK_HOME}/platform-tools:$PATH
-
-# Lua
-export SCALA_HOME=/usr/local/share/scala
-export PATH=$PATH:$SCALA_HOME/bin
-# NVM
-export NVM_DIR="/home/zhaoy/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
