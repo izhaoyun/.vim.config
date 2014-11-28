@@ -85,3 +85,17 @@ export PATH=${JAVA_HOME}/bin:$PATH
 export PATH=/usr/local/cuda-6.5/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-6.5/lib64:/usr/lib/nvidia-current:$LD_LIBRARY_PATH
 
+# Go
+export PATH=$PATH:/usr/local/go/bin
+
+# NVM
+export NVM_DIR="/home/zhaoy/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Qt
+export QTDIR=/opt/Qt5.3.2/5.3/gcc_64
+export PATH=$PATH:$QTDIR/bin
+
+# OpenCL
+export C_INCLUDE_PATH=/usr/local/cuda/include:$C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=/usr/local/cuda/include:$CPLUS_INCLUDE_PATH
