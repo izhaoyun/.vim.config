@@ -86,16 +86,23 @@ export PATH=/usr/local/cuda-6.5/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-6.5/lib64:/usr/lib/nvidia-current:$LD_LIBRARY_PATH
 
 # Go
-export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # NVM
 export NVM_DIR="/home/zhaoy/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Qt
-export QTDIR=/opt/Qt5.3.2/5.3/gcc_64
-export PATH=$PATH:$QTDIR/bin
+export QTDIR=/usr/local/Trolltech/Qt-4.8.6
+export PATH=$QTDIR/bin:$PATH
+export MANPATH=$QTDIR/man:$MANPATH
+export LD_LIBRARY_PATH=$QTDIR/lib:$LD_LIBRARY_PATH
 
 # OpenCL
-export C_INCLUDE_PATH=/usr/local/cuda/include:$C_INCLUDE_PATH
-export CPLUS_INCLUDE_PATH=/usr/local/cuda/include:$CPLUS_INCLUDE_PATH
+#export C_INCLUDE_PATH=/usr/local/cuda/include:$C_INCLUDE_PATH
+#export CPLUS_INCLUDE_PATH=/usr/local/cuda/include:$CPLUS_INCLUDE_PATH
+
+# LiteIDE
+export PATH=$PATH:/opt/liteide/bin
