@@ -28,9 +28,7 @@ ZSH_THEME="candy"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*) # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(autojump git gnu-utils copyfile copydir colored-man python mysql-macports debian web-search)
 
@@ -86,8 +84,8 @@ export PATH=/usr/local/cuda-6.5/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-6.5/lib64:/usr/lib/nvidia-current:$LD_LIBRARY_PATH
 
 # Go
-export GOPATH=$HOME/go
 export GOROOT=/usr/local/go
+export GOPATH=$HOME/go:$HOME/division/go:$HOME/goeg
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # NVM
@@ -95,10 +93,10 @@ export NVM_DIR="/home/zhaoy/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Qt
-export QTDIR=/usr/local/Trolltech/Qt-4.8.6
-export PATH=$QTDIR/bin:$PATH
-export MANPATH=$QTDIR/man:$MANPATH
-export LD_LIBRARY_PATH=$QTDIR/lib:$LD_LIBRARY_PATH
+#export QTDIR=/usr/local/Trolltech/Qt-4.8.6
+#export PATH=$QTDIR/bin:$PATH
+#export MANPATH=$QTDIR/man:$MANPATH
+#export LD_LIBRARY_PATH=$QTDIR/lib:$LD_LIBRARY_PATH
 
 # OpenCL
 #export C_INCLUDE_PATH=/usr/local/cuda/include:$C_INCLUDE_PATH
@@ -106,3 +104,8 @@ export LD_LIBRARY_PATH=$QTDIR/lib:$LD_LIBRARY_PATH
 
 # LiteIDE
 export PATH=$PATH:/opt/liteide/bin
+
+# Eclipse
+#export PATH=$PATH:/opt/eclipse/
+
+# Google Mock
