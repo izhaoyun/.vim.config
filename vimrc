@@ -1,11 +1,9 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
+set nocompatible               
+filetype off                  
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" let Vundle manage Vundle
-" required! 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'L9'
@@ -19,10 +17,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'terryma/vim-expand-region'
 Plugin 'Gundo'
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'hdima/python-syntax'
 Plugin 'The-NERD-Commenter'
-Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'Stormherz/tablify'
@@ -30,9 +25,8 @@ Plugin 'AutoClose'
 Plugin 'majutsushi/tagbar'
 Plugin 'SirVer/ultiSnips'
 Plugin 'honza/vim-snippets'
-Plugin 'tpope/vim-markdown'
 Plugin 'fatih/vim-go'
-Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
 
 call vundle#end()
 filetype plugin indent on
@@ -42,10 +36,10 @@ syntax on
 " YouCompleteMe
 let g:ycm_collect_identifiers_from_comments_and_strings=1
 let g:ycm_add_preview_to_completeopt=1
-let g:ycm_key_invoke_completion = '<C-j>'
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_key_invoke_completion='<c-j>'
+let g:ycm_confirm_extra_conf=0
+let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<cr>
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -53,13 +47,13 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " YankRing
-let g:yankring_history_dir = '~/.vim/bundle/YankRing.vim'
-let g:yankring_min_element_length = 2
-let g:yankring_enabled = 1  
-nnoremap <silent> <F10> :YRShow<CR>
+let g:yankring_history_dir='~/.vim/bundle/YankRing.vim'
+let g:yankring_min_element_length=2
+let g:yankring_enabled=1  
+nnoremap <silent><c-F9> :YRShow<cr>
 
 " EasyMotion
-let g:EasyMotion_leader_key='<Leader><Leader>'
+let g:EasyMotion_leader_key='<leader><leader>'
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
 hi EasyMotionTarget ctermbg=none ctermfg=green
@@ -72,7 +66,7 @@ let g:ctrlp_map = '<c-f>'
 map <c-b> :CtrlPBuffer<cr>
 
 " NERDTree
-map <leader>nn :NERDTreeToggle<cr>
+map <leader>nn :NERDTreeToggle<cr> 		" 打开、关闭侧边栏NERDTree
 map <leader>nb :NERDTreeFromBookmark 
 map <leader>nf :NERDTreeFind<cr>
 let NERDTreeShowBookmarks=1
@@ -83,47 +77,39 @@ let NERDTreeShowLineNumbers=1
 let NERDTreeWinPos=1
 
 " Vim-Multiple-Cursors
-let g:multi_cursor_next_key='<C-m>'
-let g:multi_cursor_prev_key='<C-p>'
-let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_next_key='<c-m>'
+let g:multi_cursor_prev_key='<c-p>'
+let g:multi_cursor_skip_key='<c-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 "Gundo"
-nnoremap <F4> :GundoToggle<CR>
+nnoremap <F4> :GundoToggle<cr>
 
 " Tagbar
-nmap <F5> :TagbarToggle<CR>
+nmap <F8> :TagbarToggle<cr>
 "在每次保存文件时自动执行ctags
 "autocmd BufWritePost * call system("ctags -R --exclude=.git")
 "手动执行ctags
-"nnoremap <F5> :!ctags -R<CR>
+"nnoremap <F5> :!ctags -R<cr>
 
 " Tablify
 let g:tablify_header_delimiter='#'
 
-" python syntax
-let python_highlight_all=1
-
-" vim powerline
-let g:Powerline_symbols='unicode'
-
 " vim-go
-au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-au FileType go nmap <Leader>ds <Plug>(go-def-split)
-au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-au FileType go nmap <Leader>dt <Plug>(go-def-tab)
-
+au FileType go nmap <leader>s  <Plug>(go-implements)
+au FileType go nmap <leader>i  <Plug>(go-info)
+au FileType go nmap <leader>gd <Plug>(go-doc)
+au FileType go nmap <leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <leader>r  <Plug>(go-run)
+au FileType go nmap <leader>b  <Plug>(go-build)
+au FileType go nmap <leader>t  <Plug>(go-test)
+au FileType go nmap <leader>c  <Plug>(go-coverage)
+au FileType go nmap <leader>ds <Plug>(go-def-split)
+au FileType go nmap <leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <leader>dt <Plug>(go-def-tab)
 
 "----------------------------------------------------------
-
 set nu
 set sw=4 	
 set ts=4 
@@ -143,11 +129,10 @@ runtime ftplugin/man.vim
 
 set autochdir
 set wmnu 	"wildmenu
-set ru 		"ruler
+set ru 		"显示光标当前位置
 set sc 		"showcmd
-set ls=2    "laststatus
+set ls=2    "总显示状态栏
 "set stl=[%F]%y%{fugitive#statusline()}%r%m%q%*%=[%o][Line:%l/%L,Column:%c][%p%%]
-
 
 set guioptions-=m
 set guioptions-=T
@@ -171,17 +156,17 @@ if has("cscope")
 	endif
 	set csverb
 endif
-nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>s :cs find s <C-R>=expand("<cword>")<cr><cr>
+nmap <C-_>g :cs find g <C-R>=expand("<cword>")<cr><cr>
+nmap <C-_>c :cs find c <C-R>=expand("<cword>")<cr><cr>
+nmap <C-_>t :cs find t <C-R>=expand("<cword>")<cr><cr>
+nmap <C-_>e :cs find e <C-R>=expand("<cword>")<cr><cr>
+nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<cr><cr>
+nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<cr>$<cr>
+nmap <C-_>d :cs find d <C-R>=expand("<cword>")<cr><cr>
 
 
-set tw=78 	"textwidth
+"set tw=78 	"textwidth
 set fo+=mB
 set wrap
 set whichwrap=b,s,<,>,[,] 
@@ -192,10 +177,12 @@ nmap <leader>w :w!<cr>
 "switch to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
-map <leader>tn :tabnew<cr>
+map <leader>Tn :tabnew<cr>
 map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
+map <leader>Tc :tabclose<cr>
+map <leader>tm :tabmove<cr>
+map <leader>tn :tabNext<cr>
+map <leader>tp :tabprevious<cr>
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
 map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
@@ -206,8 +193,8 @@ set ci   	"cindent
 set cino=>4,:0,g0
 
 set completeopt=longest,menu,preview
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif 
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+autocmd CursorMovedI * if pumvisible() == 0 | pclose | endif
+autocmd InsertLeave  * if pumvisible() == 0 | pclose | endif
 set dictionary+=/usr/share/dict/words
 map ,ss :setlocal spell!<cr>
 
@@ -217,3 +204,13 @@ set foldlevel=99
 "vim编辑只读系统文件方法 :w!!
 cmap w!! %!sudo tee > /dev/null %
 
+" Fonts
+if has("gui_running")
+	if has("gui_gtk2")
+		set guifont=Tlwg\ Typist\ 10
+	elseif has("gui_macvim")
+		set guifont=Menlo\ Regular:h14
+	elseif has("gui_win32")
+		set guifont=Consolas:h11:cANSI
+	endif
+endif

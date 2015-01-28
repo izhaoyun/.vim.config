@@ -30,7 +30,7 @@ ZSH_THEME="candy"
 # COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*) # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump git gnu-utils copyfile copydir colored-man python mysql-macports debian web-search)
+plugins=(autojump git gnu-utils copyfile copydir colored-man python mysql-macports debian web-search emacs go pip nvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -74,9 +74,9 @@ hash -d SLOG=/var/log/syslog
 hash -d WWW=/var/www
 
 # JDK_ENV
-export JAVA_HOME=/usr/lib/jvm/java-7-oracle  
-export JRE_HOME=${JAVA_HOME}/jre  
-export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle  
+#export JRE_HOME=${JAVA_HOME}/jre  
+#export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
 export PATH=${JAVA_HOME}/bin:$PATH  
 
 # CUDA_ENV
@@ -102,10 +102,5 @@ export NVM_DIR="/home/zhaoy/.nvm"
 #export C_INCLUDE_PATH=/usr/local/cuda/include:$C_INCLUDE_PATH
 #export CPLUS_INCLUDE_PATH=/usr/local/cuda/include:$CPLUS_INCLUDE_PATH
 
-# LiteIDE
-export PATH=$PATH:/opt/liteide/bin
-
-# Eclipse
-#export PATH=$PATH:/opt/eclipse/
-
 # Google Mock
+
