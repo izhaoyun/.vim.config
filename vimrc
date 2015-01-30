@@ -13,7 +13,6 @@ Plugin 'mileszs/ack.vim'
 Plugin 'EasyMotion'
 Plugin 'kien/ctrlp.vim'
 Plugin 'godlygeek/tabular'
-Plugin 'scrooloose/nerdtree'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'terryma/vim-expand-region'
 Plugin 'Gundo'
@@ -27,6 +26,8 @@ Plugin 'SirVer/ultiSnips'
 Plugin 'honza/vim-snippets'
 Plugin 'fatih/vim-go'
 Plugin 'bling/vim-airline'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
 filetype plugin indent on
@@ -39,7 +40,23 @@ let g:ycm_add_preview_to_completeopt=1
 let g:ycm_key_invoke_completion='<c-j>'
 let g:ycm_confirm_extra_conf=0
 let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<cr>
+" 跳转至定义处或者声明处
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<cr>	
+nnoremap <leader>jf :YcmCompleter GoToDefinition<cr>
+nnoremap <leader>jc :YcmCompleter GoToDeclaration<cr>
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" airline
+let g:airline#extensions#tabline#enabled = 1
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -178,11 +195,11 @@ nmap <leader>w :w!<cr>
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 map <leader>Tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>Tc :tabclose<cr>
-map <leader>tm :tabmove<cr>
-map <leader>tn :tabNext<cr>
-map <leader>tp :tabprevious<cr>
+map <leader>to :tabonly<cr>		" 保留活动标签页，关闭其他所有标签页
+map <leader>Tc :tabclose<cr> 	" 关闭当前标签页及其中所有窗口
+map <leader>tm :tabmove<cr>		" 重排标签页
+map <leader>tn :tabNext<cr>		" 下一标签页
+map <leader>tp :tabprevious<cr>	" 上一标签页
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
 map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
@@ -201,10 +218,10 @@ map ,ss :setlocal spell!<cr>
 set foldmethod=indent
 set foldlevel=99
 
-"vim编辑只读系统文件方法 :w!!
-cmap w!! %!sudo tee > /dev/null %
+" 编辑只读文件方法 :w!!
+"cmap w!! %!sudo tee > /dev/null %
 
-" Fonts
+" GUI下字体显示
 if has("gui_running")
 	if has("gui_gtk2")
 		set guifont=Tlwg\ Typist\ 10
