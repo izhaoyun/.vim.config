@@ -44,10 +44,11 @@ alias ls='ls --color=auto -F'
 alias ll='ls -l'
 alias la='ls -A'
 alias vi='vim'
+alias gdb='gdb -q'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-#alias emacs='emacs -nw'
+alias emacs='emacs24 -nw'
 alias dstat='dstat -cdlmnpsy'
 alias SimpleHTTPServer='python -m SimpleHTTPServer'
 #alias ustc_bbs='luit -encoding gbk telnet bbs.ustc.edu.cn'
@@ -72,6 +73,7 @@ hash -d LINUX=/lib/modules/$(command uname -r)/build/
 hash -d LOG=/var/log
 hash -d SLOG=/var/log/syslog
 hash -d WWW=/var/www
+hash -d GITHUB=$HOME/Downloads/GitHub
 
 # JDK_ENV
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle  
@@ -104,3 +106,5 @@ export NVM_DIR="/home/zhaoy/.nvm"
 
 # Google Mock
 
+# CMake
+#export CMAKE_ROOT=/usr/local/share/cmake-3.1

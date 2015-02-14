@@ -34,7 +34,7 @@ filetype plugin indent on
 syntax enable
 syntax on
 
-" YouCompleteMe
+" youcompleteme
 let g:ycm_collect_identifiers_from_comments_and_strings=1
 let g:ycm_add_preview_to_completeopt=1
 let g:ycm_key_invoke_completion='<c-j>'
@@ -51,65 +51,65 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_auto_loc_list            = 1
+let g:syntastic_check_on_open            = 1
+let g:syntastic_check_on_wq              = 0
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
 
-" UltiSnips
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" ultiSnips
+let g:UltiSnipsExpandTrigger       = "<c-j>"
+let g:UltiSnipsJumpForwardTrigger  = "<c-b>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-z>"
 
-" YankRing
-let g:yankring_history_dir='~/.vim/bundle/YankRing.vim'
-let g:yankring_min_element_length=2
-let g:yankring_enabled=1  
+" yankring
+let g:yankring_history_dir        = '~/.vim/bundle/YankRing.vim'
+let g:yankring_min_element_length = 2
+let g:yankring_enabled            = 1
 nnoremap <silent><c-F9> :YRShow<cr>
 
-" EasyMotion
+" easymotion
 let g:EasyMotion_leader_key='<leader><leader>'
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
 hi EasyMotionTarget ctermbg=none ctermfg=green
 hi EasyMotionShade  ctermbg=none ctermfg=blue
 
-" Ctrlp
-let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+" ctrlp
+let g:ctrlp_cache_dir         = $HOME.'/.cache/ctrlp'
 let g:ctrlp_working_path_mode = 0
-let g:ctrlp_map = '<c-f>'
+let g:ctrlp_map               = '<c-f>'
 map <c-b> :CtrlPBuffer<cr>
 
-" NERDTree
+" nerdtree
 map <leader>nn :NERDTreeToggle<cr> 		" 打开、关闭侧边栏NERDTree
 map <leader>nb :NERDTreeFromBookmark 
 map <leader>nf :NERDTreeFind<cr>
-let NERDTreeShowBookmarks=1
-let NERDTreeShowFiles=1
-let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.$','\~$']
-let NERDTreeShowLineNumbers=1
-let NERDTreeWinPos=1
+let NERDTreeShowBookmarks   = 1
+let NERDTreeShowFiles       = 1
+let NERDTreeShowHidden      = 1
+let NERDTreeIgnore          = ['\.$','\~$']
+let NERDTreeShowLineNumbers = 1
+let NERDTreeWinPos          = 1
 
-" Vim-Multiple-Cursors
+" vim-multiple-cursors
 let g:multi_cursor_next_key='<c-m>'
 let g:multi_cursor_prev_key='<c-p>'
 let g:multi_cursor_skip_key='<c-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
-"Gundo"
+" gundo
 nnoremap <F4> :GundoToggle<cr>
 
-" Tagbar
+" tagbar
 nmap <F8> :TagbarToggle<cr>
 "在每次保存文件时自动执行ctags
 "autocmd BufWritePost * call system("ctags -R --exclude=.git")
 "手动执行ctags
 "nnoremap <F5> :!ctags -R<cr>
 
-" Tablify
+" tablify
 let g:tablify_header_delimiter='#'
 
 " vim-go
