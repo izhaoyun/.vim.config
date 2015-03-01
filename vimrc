@@ -26,8 +26,9 @@ Plugin 'SirVer/ultiSnips'
 Plugin 'honza/vim-snippets'
 Plugin 'fatih/vim-go'
 Plugin 'bling/vim-airline'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
+Plugin 'aklt/plantuml-syntax'
 
 call vundle#end()
 filetype plugin indent on
@@ -46,14 +47,14 @@ nnoremap <leader>jf :YcmCompleter GoToDefinition<cr>
 nnoremap <leader>jc :YcmCompleter GoToDeclaration<cr>
 
 " syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list            = 1
-let g:syntastic_check_on_open            = 1
-let g:syntastic_check_on_wq              = 0
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list            = 1
+"let g:syntastic_check_on_open            = 1
+"let g:syntastic_check_on_wq              = 0
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
