@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Eclipse
-Icon=eclipse
-Exec=/opt/eclipse/eclipse
-Terminal=false
-Comment=Integrated Development Environment
-Categories=Development;IDE;Java;
