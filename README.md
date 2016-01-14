@@ -4,7 +4,7 @@ Steps for setting up the vim configuration
 1. create a local clone 
 	
 	```sh
-		$ git clone git@github.com:izhaoyun/vim-configurations.git .vim
+		$ git clone git@github.com:izhaoyun/.vim-config.git .vim
 	```
 
 2. set up vundle
