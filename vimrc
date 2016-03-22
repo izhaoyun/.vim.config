@@ -25,7 +25,6 @@ Plugin 'majutsushi/tagbar'
 Plugin 'SirVer/ultiSnips'
 Plugin 'honza/vim-snippets'
 Plugin 'fatih/vim-go'
-Plugin 'bling/vim-airline'
 "Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'aklt/plantuml-syntax'
@@ -55,9 +54,6 @@ nnoremap <leader>jc :YcmCompleter GoToDeclaration<cr>
 "let g:syntastic_auto_loc_list            = 1
 "let g:syntastic_check_on_open            = 1
 "let g:syntastic_check_on_wq              = 0
-
-" airline
-let g:airline#extensions#tabline#enabled = 1
 
 " ultiSnips
 let g:UltiSnipsExpandTrigger       = "<c-j>"
