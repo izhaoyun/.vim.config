@@ -1,27 +1,8 @@
-Steps for setting up the vim configuration
+# How to setup 
 ==================
+1. Clone the repository.
+  ```bash
+git clone --recursive https://github.com/izhaoyun/.vim.config .vim
+  ```
 
-1. create a local clone 
-	
-	```sh
-		$ git clone git@github.com:izhaoyun/.vim-config.git .vim
-	```
-
-2. set up vundle
-
-	```sh
-		$ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
-	```
-
-3. install plugins
-	
-	Launch vim and run `:PluginInstall`
-
-
-4. set up ycm
-	
-	```sh
-		$ cd ~/.vim/bundle/YouCompleteMe
-		$ ./install.sh --clang-completer
-	```
-
+2. Install plugins using [Vundle](https://github.com/VundleVim/Vundle.vim). Launch `vim` and run `:PluginInstall`. 
