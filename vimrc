@@ -6,13 +6,17 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
+" Programming
+Plugin 'fatih/vim-go'
+
 call vundle#end()
 
 filetype plugin indent on
 syntax enable
 syntax on
 
-set nu
+set number
+set numberwidth=3
 "set sw=4 	
 "set ts=4 
 set t_Co=256
@@ -20,6 +24,7 @@ set t_Co=256
 set hlsearch
 set incsearch
 
+"set cursorline
 set linebreak
 set showmatch
 set novisualbell
@@ -56,13 +61,17 @@ nmap <leader>w :w!<cr>
 " switch to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
+map <C-right> <ESC>:bn<cr>
+map <C-left> <ESC>:bp<cr>
+map <C-up> <ESC>:buffers<cr>
+
 map <leader>tt :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove<cr>
 map <leader>tn :tabNext<cr>
 map <leader>tp :tabprevious<cr>
-map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>
 
 set autoindent
 set cindent
@@ -79,3 +88,6 @@ map ,ss :setlocal spell!<cr>
 
 set foldmethod=indent
 set foldlevel=99
+
+"set spell
+"set spelllang=en_us
