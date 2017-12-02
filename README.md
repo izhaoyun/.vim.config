@@ -1,5 +1,8 @@
-# How to setup 
-==================
+## About
+Here is my configuration for vim.
+
+## Quick Start
+
 1. Clone the repository.
   ```bash
 git clone --recursive https://github.com/izhaoyun/.vim.config .vim
