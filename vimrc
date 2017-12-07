@@ -7,6 +7,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Programming
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'fatih/vim-go'
 
 call vundle#end()
